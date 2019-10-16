@@ -1,2 +1,23 @@
 <!--pages/charts/charts.wxml-->
-<text>pages/charts/charts.wxml</text>
+<view class="movies">
+<!-- 标题 -->
+<!-- 高分电影top10 -->
+    <text class="myTitle">电影评分TOP10</text>
+    <!-- 内容 -->
+    <view wx:for="{{topMovies}}" wx:key="index" class="movie">
+        <text>{{index+1}}</text>
+        <text style="color:#6149f6">{{item.title}}</text>
+        <text>{{item.average}}</text>
+        <van-button bindtap="goDetail" color="linear-gradient(to right, #4bb0ff, #6149f6)" data-id="{{item.id}}">了解详情</van-button>
+    </view>
+<!-- 标题 -->
+<!-- 热映电影top10 -->
+    <text class="myTitle">当前最热TOP10</text>
+    <view wx:for="{{hotMovies}}" wx:key="index" class="movie">
+        <text>{{index+1}}</text>
+        <text style="color:#6149f6">{{item.title}}</text>
+        <text>{{item.average}}</text>
+        <van-button bindtap="goDetail" color="linear-gradient(to right, #4bb0ff, #6149f6)" data-id="{{item.id}}">了解详情</van-button>
+    </view>
+
+</view>

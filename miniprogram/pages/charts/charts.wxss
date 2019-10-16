@@ -1,1 +1,37 @@
 /* pages/charts/charts.wxss */
+.movies{
+    display: flex;
+    flex-direction: column;
+}
+.myTitle{
+    width:100%;
+    text-align: center;
+    font-size: 36rpx;
+    font-weight: bold;
+    color:#0aa1ed;
+    margin: 20rpx auto;
+    background: #faa;
+    padding:10rpx 0;
+}
+.movie{
+    padding:0 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom:5rpx ;
+    /* background: #adf; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
