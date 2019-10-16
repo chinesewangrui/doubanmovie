@@ -1,0 +1,53 @@
+/* pages/movies/movies.wxss */
+/* 标题属性 */
+.myTitle{
+    text-align: center;
+    color:#0aa1ed;
+    font-size:36rpx;
+    font-weight: bold;
+    padding:5rpx;
+}
+/* 电影列表 弹性布局 */
+.movies{
+    display:flex;
+    flex-direction: column;
+}
+/* 单部电影 弹性布局 横向排列 */
+.movie{
+    display:flex;
+    padding:10px;
+    border-bottom: 1px solid #ccc
+}
+/* 左侧图片 */
+.movieImg{
+    width:200rpx;
+    height:300rpx;
+    margin-right:30rpx;
+}
+/* 右侧电影介绍 */
+.movieInfo{
+    flex:1; /*将右侧区域填满*/
+    font-size:28rpx;
+    line-height:1.8;/*行高为原有文字间距的1.8倍*/
+}
+.movieInfo>view{
+    margin-bottom:20rpx;
+}
+/* 电影标题 */
+.movieTitle{
+    color:#666;
+    font-size:40rpx;
+    font-weight:bold;
+}
+/* 电影评分 */
+.movieScore{
+    color:#faaf00;
+}
+/* 电影详情按钮 */
+.movieComment{
+    height:60rpx;
+    background: #e54847;
+    color:#fff;
+    font-size:26rpx;
+    margin-top:50rpx
+}

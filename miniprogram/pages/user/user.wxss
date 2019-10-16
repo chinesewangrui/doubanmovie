@@ -1,0 +1,54 @@
+/* pages/user/user.wxss */
+.profile{
+    /* 背景颜色 */
+    background: #0aa1ed;
+    /* 父元素宽高 */
+    width:100%;
+    height:400rpx;
+    /* 子元素居中显示 */
+    text-align: center;
+    /* 相对定位 */
+    position:relative;
+}
+/* 头像子元素 */
+.profileImg{
+    /* 绝对定位 */
+    position:absolute;
+    left:50%;/*居中*/
+    transform:translate(-50%,60rpx);
+    /* 图片宽高 */
+    width:250rpx;
+    height:250rpx;
+    /* 块级元素 */
+    display:block;
+    /* 溢出隐藏 */
+    overflow: hidden;
+    /* 圆角 圆形 */
+    border-radius: 50%;
+}
+/* 用户名 */
+.profileName{
+    position:absolute;
+    left:45%;
+    top:85%
+}
+/* 喜欢的电影列表 */
+.myMovies{
+    width:100%;
+    background: #faa;
+    font-size:36rpx;
+    padding:10rpx;
+    text-align:center;
+    color:#fff;
+}
+.movieShow{
+    display:block;
+}
+.movieHide{
+    display:none;
+}
+
+
+
+
+

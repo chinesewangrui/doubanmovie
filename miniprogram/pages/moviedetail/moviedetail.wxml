@@ -1,0 +1,62 @@
+<!--pages/moviedetail/moviedetail.wxml-->
+<!-- 电影详情信息 -->
+<!-- 背景图片--模糊电影大图 -->
+<view class="detailContainer" style="background:url({{movie.images.large}}) no-repeat top"></view>
+<!-- 遮罩层 深灰色 -->
+<view class="detailMask"></view>
+<view class="myTitle">{{movie.title}}</view>
+<!-- 电影介绍 -->
+<view class="detailInfo">
+    
+    <!-- 左侧电影图片 清晰 -->
+    <image src="{{movie.images.medium}}" class="detailImg"></image>
+    <!-- 右侧电影介绍 -->
+    <view class="detail">
+        <!-- 导演 -->
+        <view>导演:{{movie.directors[0].name}}</view>
+        <!-- 主演 -->
+        <view>主演:{{movie.casts[0].name}} /{{ movie.casts[1].name}}</view>
+        <!-- 类型 -->
+        <view>类型:{{movie.genres[0]}}/{{movie.genres[1]}}</view>
+        <!-- 评分 -->
+        <view>评分:{{movie.rating.average}}</view>
+        <!-- 制片国家/地区 -->
+        <view>制片国家/地区 :{{movie.countries[0]}}</view>
+        <!-- 语言 -->
+        <view>语言:{{movie.languages[0]}}</view>
+        <!-- 上映日期 -->
+        <view>上映日期:{{movie.mainland_pubdate}}</view>
+        <!-- 又名 -->
+        <view>又名:{{movie.aka[0]}}</view>
+    </view>
+</view>
+<!-- 电影剧情 -->
+<view>剧情简介:</view>
+<view class="desc">{{movie.summary}}</view>
+<!-- 评论 输入框 -->
+<view>评论:
+    <van-cell-group>
+            <van-field
+                value="{{ content }}"
+                placeholder="请输入评论"
+                bind:change="onContentChange"
+            />
+        </van-cell-group>
+</view>
+<!-- 打分 -->
+<view>评分:
+    <van-rate
+    value="{{ score }}"
+    size="{{ 30 }}"
+    allow-half
+    bind:change="onChangeScore"
+    />
+</view>
+<!-- 上传图片按钮(选中图片) -->
+<van-button type="danger" size="large" bindtap="uploadFile">上传图片</van-button>
+<!-- 图片预览区域 -->
+<view>
+    <image wx:for="{{imgs}}" wx:key="index" src="{{item}}" class="commentImg"></image>
+</view>
+<!-- 发表评论 -->
+<van-button size="large" bindtap="comment" type="default">发表评论</van-button>

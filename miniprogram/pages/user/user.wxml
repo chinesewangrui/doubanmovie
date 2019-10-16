@@ -1,0 +1,32 @@
+<!--pages/user/user.wxml-->
+<view class="profile">
+    <!-- 获取当前登录用户的头像 -->
+    <!-- 设置圆形头像 -->
+    <view class="profileImg">
+        <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="profileName">
+        <!-- 获取当前登录用户昵称 -->
+        <open-data type="userNickName"></open-data>
+    </view>
+</view>
+<!-- 获取用户更多信息:询问是否允许 -->
+<!-- <button open-type="getUserInfo"  bindgetuserinfo="getUser" class="getMore">更多信息</button> -->
+<van-button type="info" size="large" open-type="getUserInfo"  bindgetuserinfo="getUser" >更多信息</van-button>
+<view class="{{isShow?'movieShow':'movieHide'}}">
+    <view class="myMovies" >我喜欢的电影</view>
+    <!-- 喜欢的电影列表 -->
+    <view wx:for="{{movies}}" wx:key="index">
+        <!-- 电影名称 -->
+        <view>电影名:<text>{{item.moviename}}</text></view>
+        <!-- 评论 -->
+        <view>喜欢原因:<text>{{item.content}}</text></view>
+        <!-- 显示电影图片列表 -->
+        <image wx:for="{{item.fileIds}}" wx:key="index" src="{{item}}"></image>
+    </view>
+</view>
+
+
+
+
+

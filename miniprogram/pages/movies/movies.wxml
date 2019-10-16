@@ -1,0 +1,27 @@
+<!--pages/movies/movies.wxml-->
+<!-- 标题 -->
+<text class="myTitle">{{title}}</text>
+<!-- 电影列表 -->
+<view class="movies">
+    <!-- 单部电影 -->
+    <view class="movie" wx:for="{{movies}}" wx:key="index">
+    <!-- 左侧海报 -->
+    <view>
+        <image src="{{item.images.small}}" class="movieImg"></image>
+    </view>
+    <!-- 右侧电影介绍 -->
+    <view class="movieInfo">
+        <!-- 电影标题 -->
+        <view class="movieTitle">{{item.title}}</view>
+        <!-- 电影评分 -->
+        <view>评分:<text class="movieScore">{{item.rating.average}}</text></view>
+        <!-- 电影主角 -->
+        <view>主演:{{item.casts[0].name}} / {{item.casts[1].name}}</view>
+        <!-- 上映时间 -->
+        <view>上映日期:{{item.mainland_pubdate}}</view>
+        <!-- 详情按钮 -->
+        <button class="movieComment" bindtap="goDetails" data-id="{{item.id}}">电影详情</button>
+
+    </view>
+    </view>
+</view>

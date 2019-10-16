@@ -1,0 +1,59 @@
+/* pages/moviedetail/moviedetail.wxss */
+/* 背景图片 */
+.detailContainer{
+    height:600rpx;  /*背景图片高度*/
+    opacity:.9;    /*透明度*/
+    filter:blur(40rpx); /*高斯模糊滤镜*/
+}
+/* 遮罩层 */
+.detailMask{
+    position:absolute;
+    left:0;top:0;
+    z-index: -1;
+    width:100%;
+    height:600rpx;
+    background: #555;
+}
+.myTitle{
+    font-size:36rpx;
+    font-weight:bold;
+    position:absolute;
+    left:0;top:0;
+    padding-left: 24rpx;
+    padding-top:10rpx;
+}
+/* 电影详情信息 */
+.detailInfo{
+    position:absolute;
+    top:50rpx;left:0;
+    height:500rpx;width:100%;
+    padding:20rpx;
+    display:flex;
+}
+/* 左侧图片 */
+.detailImg{
+    width:300rpx;
+    height:400rpx;
+    margin-top:30rpx;
+    margin-right:20rpx;
+}
+/* 右侧文字区域 介绍 */
+.detail{
+    line-height:50rpx;
+    margin-top:25rpx;
+}
+/* 介绍内容 */
+.detail view{
+    color:#fff;
+    font-size:24rpx;
+}
+/* 预览图片 */
+.commentImg{
+    width:200rpx;
+    height:200rpx;
+    margin-right:20px
+}
+
+
+
+

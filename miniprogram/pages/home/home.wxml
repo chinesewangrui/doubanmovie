@@ -1,0 +1,82 @@
+<!--pages/home/home.wxml-->
+<!-- 首页 -->
+<image src="../../images/logo.jpg" style="height:100rpx;margin:0 auto"></image>
+
+<!-- 热门电影 -->
+<view>
+    <!-- 标题 -->
+        <van-nav-bar
+        left-text="豆瓣热映"
+        right-text="查看更多"
+        bind:click-right="goList"
+        data-name="gethotmovies"
+        />
+    <!-- 内容 -->
+    <view>
+        <van-grid column-num="3" border="{{ false }}">
+            <van-grid-item use-slot wx:for="{{ hotMovies }}" wx:key="index">
+                <image
+                style="width: 100%; height: 150px;"
+                src="{{item.images.medium}}"
+                />
+                <text>{{item.title}}</text>
+                <text style="color:#0aa1ed;padding:10rpx 0">评分:{{item.rating.average}}</text>
+                <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)"  bindtap="goDetail"
+                data-id="{{item.id}}"  >查看详情</van-button>
+            </van-grid-item>
+        </van-grid>
+    </view>
+</view>
+<!-- 即将上映 -->
+<view>
+    <van-nav-bar
+        left-text="即将上映"
+        right-text="查看更多"
+        bind:click-right="goList"
+        data-name="getcomingmovies"
+        />
+      <!-- 内容 -->
+    <view>
+        <van-grid column-num="3" border="{{ false }}">
+            <van-grid-item use-slot wx:for="{{ newMovies }}" wx:key="index">
+                <image
+                style="width: 100%; height: 150px;"
+                src="{{item.images.medium}}"
+                />
+                <text>{{item.title}}</text>
+                <text style="color:#0aa1ed;padding:10rpx 0">评分:{{item.rating.average}}</text>
+                <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)"  bindtap="goDetail"
+                data-id="{{item.id}}"  >查看详情</van-button>
+            </van-grid-item>
+        </van-grid>
+    </view>
+</view>
+<!-- 电影大全 -->
+<view>
+    <van-nav-bar
+        left-text="精选高分"
+        right-text="查看更多"
+        bind:click-right="goList"
+        data-name="gettop250"
+        />
+         <!-- 内容 -->
+    <view>
+        <van-grid column-num="3" border="{{ false }}">
+            <van-grid-item use-slot wx:for="{{ allMovies }}" wx:key="index">
+                <image
+                style="width: 100%; height: 150px;"
+                src="{{item.images.medium}}"
+                />
+                <text>{{item.title}}</text>
+                <text style="color:#0aa1ed;padding:10rpx 0">评分:{{item.rating.average}}</text>
+                <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)"  bindtap="goDetail"
+                data-id="{{item.id}}"  >查看详情</van-button>
+            </van-grid-item>
+        </van-grid>
+    </view>
+</view>
+<!-- 豆瓣榜单 -->
+<!-- 豆瓣片单 -->
+<!-- 分类浏览 -->
+<!-- 豆瓣视频 -->
+<!-- 为您推荐 -->
